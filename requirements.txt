@@ -1,0 +1,6 @@
+openai==1.72.0
+langchain==0.3.23
+langchain-openai==0.3.12
+python-dotenv==1.1.0
+langchain-community==0.3.21
+fastapi==0.115.12

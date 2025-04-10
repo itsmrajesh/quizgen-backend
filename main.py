@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 from typing import Literal, Optional, List
 from dotenv import load_dotenv
@@ -9,6 +10,15 @@ from langchain_community.callbacks.manager import get_openai_callback
 load_dotenv()
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 # LangChain model setup
 model_name = "gpt-4o-2024-08-06"
